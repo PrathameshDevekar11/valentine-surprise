@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Will You Be My Valentine?</title>
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.15);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    max-width: 400px;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  button {
+    padding: 12px 22px;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin: 10px;
+    transition: all 0.2s ease;
+  }
+
+  #yes {
+    background-color: #ff4d6d;
+    color: white;
+  }
+
+  #no {
+    background-color: #ffffff;
+    color: #ff4d6d;
+    position: absolute;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <h1>💖 Kavya Patil 💖<br><br>Will you be my Valentine? 💕</h1>
+  <button id="yes" onclick="yesClicked()">Yes! Of course 💘</button>
+  <button id="no">No 🙈</button>
+</div>
+
+<script>
+  const noBtn = document.getElementById("no");
+
+  noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+  });
+
+  function yesClicked() {
+    document.body.innerHTML = `
+      <div style="text-align:center;">
+        <h1>🥰 Yayyyy! 🥰</h1>
+        <p style="font-size:20px;">I knew it ❤️<br>Forever my Valentine 💍💖</p>
+      </div>
+    `;
+  }
+</script>
+
+</body>
+</html>
